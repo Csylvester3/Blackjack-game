@@ -80,44 +80,44 @@ console.log(main);
         scoreboard.textContent = 'Dealer 0 vs Player 0';
         scoreboard.textContent.fontSize = '2em';
 
-        return scoreboard
+        return scoreboard;
     }
     function CreateDealerDiv(){
        const dealer = document.createElement('div');
         // game.table.append(game.dealer);
-        dealer.append(game.dealerScore);
-        dealer.append(game.dealerCards);
+        dealer.append(dealerScore);
+        dealer.append(dealerCards);
         
-        return dealer
+        return dealer;
     }
     function CreateDealerCards(dealer){
         const dealerCards = document.createElement('div');
         dealerCards.textContent = 'Dealer Cards';
-        dealer.append(game.dealerCards);
+        game.dealer.append(game.dealerCards);
         return dealerCards
     }
     function CreateDealerScore(dealer){
         const dealerScore = document.createElement('div');
         dealerScore.innerText = '-'; // .textContent = '-';
         dealerScore.classList.add('score');
-        dealer.append(dealerScore);
+        dealer.append(game.dealerScore);
         return dealerScore
     }
     function CreatePlayer(table){
        const Player = document.createElement('div');
-        table.append(game.player);
-        return Player
+        table.append(Player);
+        return Player;
     }
     function CreatePlayerCards(table){
        const playerCards = document.createElement('div');
         playerCards.textContent = 'Player Cards';
-        table.append(game.playerCards);
-        return playerCards
+        table.append(playerCards);
+        return playerCards;
     }
     function CreateplayerScore(dealer){
        const playerScore = document.createElement('div');
         playerScore.innerText = '-'; // .textContent = '-';
-        dealer.append(playerScore);
+        dealer.append(game.playerScore);
         return playerScore
     }
     function CreateDealerBtn(){
@@ -136,8 +136,8 @@ console.log(main);
     }
     function CreateDashboard(table){
        const dashBoard = document.createElement('div');
-        dashBoard.append(game.btnDeal);
-        table.append(game.dashBoard)
+        dashBoard.append(btnDeal);
+        table.append(dashBoard)
         return dashBoard
         
     }
@@ -145,12 +145,12 @@ console.log(main);
        const status = document.createElement('div');
         status.classList.add('message')
         status.innerText = 'Message for player'
-        dashBoard.append(game.status)
+        dashBoard.append(status)
         return status
     }
     function CreateTable(main){
         const table = document.createElement('div');
-        main.append(game.table)
+        main.append(table)
         return table
     }
     function MainGame(){
