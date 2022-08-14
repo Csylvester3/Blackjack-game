@@ -27,9 +27,9 @@ console.log(main);
         // game.dealerScore.classList.add('score');
         
         // game.table.append(dealerDiv); // game.dealer
-        table.append(dealerDiv)
-        const dealerScore =CreateDealerScore();
-        const dealerCards = CreateDealerCards();
+        table.append(dealer)
+        const dealerScore = CreateDealerScore(dealer);
+        const dealerCards = CreateDealerCards(dealer);
 
         dealer.append(dealerScore);
         dealer.append(dealerCards);
@@ -42,7 +42,7 @@ console.log(main);
         // game.playerScore.classList.add('score');
         const player = CreatePlayer(table);
         const playerCards = CreatePlayerCards(table);
-        const playerScore = CreateplayerScore();
+        const playerScore = CreateplayerScore(table);
         
         table.append(player);
         dealer.append(playerScore);
@@ -60,7 +60,7 @@ console.log(main);
        const btnDeal = CreateDealerBtn();
         dashBoard.append(btnDeal);
 
-        const btnHit = CreatePlayerHitBtn();
+        const btnHit = CreatePlayerHitBtn(dashBoard);
         // game.btnHit = document.createElement('button');
         // game.btnHit.innerText = 'HIT';
         // game.btnHit.classList.add('btn');
@@ -90,17 +90,17 @@ console.log(main);
         
         return dealer
     }
-    function CreateDealerCards(){
+    function CreateDealerCards(dealer){
         const dealerCards = document.createElement('div');
         dealerCards.textContent = 'Dealer Cards';
-        game.dealer.append(game.dealerCards);
+        dealer.append(game.dealerCards);
         return dealerCards
     }
-    function CreateDealerScore(){
+    function CreateDealerScore(dealer){
         const dealerScore = document.createElement('div');
         dealerScore.innerText = '-'; // .textContent = '-';
         dealerScore.classList.add('score');
-        dealer.append(game.dealerScore);
+        dealer.append(dealerScore);
         return dealerScore
     }
     function CreatePlayer(table){
@@ -117,21 +117,21 @@ console.log(main);
     function CreateplayerScore(dealer){
        const playerScore = document.createElement('div');
         playerScore.innerText = '-'; // .textContent = '-';
-        dealer.append(game.playerScore);
+        dealer.append(playerScore);
         return playerScore
     }
     function CreateDealerBtn(){
        const btnDeal = document.createElement('button');
         btnDeal.innerText = 'Deal';
         btnDeal.classList.add('btn');
-        return btnDeal
+        return btnDeal;
         
     }
     function CreatePlayerHitBtn(dashBoard){
        const btnHit = document.createElement('button');
         btnHit.innerText = 'HIT';
         btnHit.classList.add('btn');
-        dashBoard.append(game.btnHit);
+        dashBoard.append(btnHit);
         return btnHit
     }
     function CreateDashboard(table){
