@@ -18,7 +18,7 @@ console.log(main);
         // game.table = document.createElement('div');
         const table = CreateTable(main);
 
-        const dealer = CreateDealerDiv();
+        const dealer =  CreateDealerDiv();
         // game.dealer = document.createElement('div');
         // game.dealerCards = document.createElement('div');
         // game.dealerCards.textContent = 'Dealer Cards';
@@ -82,25 +82,25 @@ console.log(main);
 
         return scoreboard;
     }
-    function CreateDealerDiv(){
+    function CreateDealerDiv(dealerScore, dealerCards){
        const dealer = document.createElement('div');
         // game.table.append(game.dealer);
-        dealer.append(dealerScore);
-        dealer.append(dealerCards);
+        // dealer.append(dealerScore);
+        // dealer.append(dealerCards);
         
         return dealer;
     }
     function CreateDealerCards(dealer){
         const dealerCards = document.createElement('div');
         dealerCards.textContent = 'Dealer Cards';
-        game.dealer.append(game.dealerCards);
+        dealer.append(dealerCards);
         return dealerCards
     }
     function CreateDealerScore(dealer){
         const dealerScore = document.createElement('div');
         dealerScore.innerText = '-'; // .textContent = '-';
         dealerScore.classList.add('score');
-        dealer.append(game.dealerScore);
+        dealer.append(dealerScore);
         return dealerScore
     }
     function CreatePlayer(table){
@@ -117,7 +117,7 @@ console.log(main);
     function CreateplayerScore(dealer){
        const playerScore = document.createElement('div');
         playerScore.innerText = '-'; // .textContent = '-';
-        dealer.append(game.playerScore);
+        dealer.append(playerScore);
         return playerScore
     }
     function CreateDealerBtn(){
@@ -136,9 +136,9 @@ console.log(main);
     }
     function CreateDashboard(table){
        const dashBoard = document.createElement('div');
-        dashBoard.append(btnDeal);
+        //dashBoard.append(btnDeal);
         table.append(dashBoard)
-        return dashBoard
+        return dashBoard;
         
     }
     function CreateStatus(dashBoard){
